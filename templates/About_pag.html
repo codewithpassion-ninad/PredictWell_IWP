@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}" />
+</head>
+
+<body>
+    <section class="about_section layout_padding">
+        <div class="container  ">
+          <div class="row">
+            <div class="col-md-6 ">
+              <div class="img-box">
+                <img src="{{ url_for('static',filename='./images/quality.png') }}" alt="">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="detail-box">
+                <div class="heading_container">
+                  <h2>
+                    <span>About us</span>
+                  </h2>
+                </div>
+                <p class="quality-service" style="color: black">
+                    We are a group of dedicated individuals committed to providing the best.
+                    With years of experience in the industry, we strive to be the best in our field and put our customers first. Our team is passionate about building relationships with each and every one of you and creating an environment where everyone feels welcome. We work hard to ensure that your experience with us is perfect, and we are here to help you.
+                    Thank you for choosing us as your go-to provider; we look forward to serving you!
+                </p>
+                <a href="read.html">
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+
+      </footer>
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
+</body>
+</html>

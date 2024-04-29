@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Disease</title>
+</head>
+<body>
+    <h3>Select Symptoms</h3>
+    <form method="POST" action="/model">
+        {% for symptom in symptoms %}
+            <input type="checkbox" name="symptoms" value="{{ symptom }}"> {{ symptom }}<br>
+        {% endfor %}
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if predictions %}
+    <h3>Predictions</h3>
+    <ul>
+        {% for model, result in predictions.items() %}
+            <li><strong>{{ model }}:</strong> {{ result }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Disease</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h3>Select Symptoms</h3> <br><br>
+        <form method="POST" action="/model">
+            <div class="symptoms-columns">
+                {% for symptom in symptoms %}
+                    <div class="symptom-item">
+                        <input type="checkbox" name="symptoms" id="{{ symptom }}" value="{{ symptom }}">
+                        <label for="{{ symptom }}">{{ symptom }}</label>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="predict-button" action ="/model">Predict</button>
+            </div>
+        </form>
+
+        {% if predictions %}
+            <h3>Predictions</h3>
+            <ul class="predictions-list">
+                {% for model, result in predictions.items() %}
+                    <li><strong>{{ model }}:</strong> {{ result }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form method="GET" action="/home" class="buttonscontainer">
+            <button type="submit" class="logout-button">Logout</button>
+        </form> 
+        <!-- <form method="POST" class="buttonscontainer">
+        </form> -->
+    </div>
+</body>
+</html>
